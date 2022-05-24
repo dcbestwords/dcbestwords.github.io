@@ -10,6 +10,24 @@
     
     
     <url>
+        <loc>https://dcbestwords.github.io/about/</loc>
+        <lastmod>2022-05-24T14:27:54.691Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
+        <loc>https://dcbestwords.github.io/link/</loc>
+        <lastmod>2022-05-24T14:27:39.744Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    
+    
+    <url>
         <loc>https://dcbestwords.github.io/comments/</loc>
         <lastmod>2022-05-24T07:05:30.788Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -21,24 +39,6 @@
     <url>
         <loc>https://dcbestwords.github.io/categories/</loc>
         <lastmod>2022-05-24T03:03:35.217Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://dcbestwords.github.io/link/</loc>
-        <lastmod>2022-05-24T03:02:13.560Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    
-    
-    <url>
-        <loc>https://dcbestwords.github.io/about/</loc>
-        <lastmod>2022-05-23T13:27:47.910Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
