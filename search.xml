@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>css初级笔记（一）</title>
+      <link href="/posts/css%E5%88%9D%E7%BA%A7%E7%AC%94%E8%AE%B0/"/>
+      <url>/posts/css%E5%88%9D%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<div class="note info flat"><p>实践中优先外部样式表、平时练习可以使用内部样式表<code>&lt;style&gt;&lt;/style&gt;</code> </p></div><h1 id="语法组成："><a href="#语法组成：" class="headerlink" title="语法组成："></a>语法组成：</h1><p>css的基本语法分为两部分：选择器和声明块。</p><ul><li>选择器：通过选择器可以选中页面中的指定元素，比如 p 的作用就是选中页面中所有的p元素</li><li>声明块：通过声明块来指定要为元素设置的样式<ul><li>声明块由一个一个的声明组成</li><li>声明是一个名值对结构，一个样式名对应一个样式值，名和值之间以:连接，以;结尾</li></ul></li></ul><h1 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h1><h2 id="1-常用选择器"><a href="#1-常用选择器" class="headerlink" title="1. 常用选择器"></a>1. 常用选择器</h2><ul><li>元素（标签）选择器<ul><li>作用：根据标签名来选中指定的元素</li><li>语法：标签名{}</li><li>例子：p{}、h1{}、div{}</li></ul></li><li>id选择器<ul><li>作用：根据元素的id属性值选中一个元素</li><li>语法：#id属性值{}</li><li>例子：#box{}   #red{}</li></ul></li><li>类选择器<ul><li>作用：根据元素的class属性值选中一组元素</li><li>语法：.class属性值</li><li>例子：.abc{}  .circle{}</li></ul></li><li>通配选择器<ul><li>作用：选中页面中的所有元素</li><li>语法: *</li></ul></li></ul><h2 id="2-复合选择器"><a href="#2-复合选择器" class="headerlink" title="2. 复合选择器"></a>2. 复合选择器</h2><ul><li><p>交集选择器</p><ul><li>作用：选中同时符合多个条件的元素</li><li>语法：选择器1选择器2选择器3选择器n{}</li></ul><div class="note warning flat"><p>注意：交集选择器中如果有元素选择器，必须使用元素选择器开头  </p></div></li><li><p>选择器分组（并集选择器）</p><ul><li>作用：同时选择多个选择器对应的元素</li><li>语法：选择器1,选择器2,选择器3,选择器n{}</li><li>例子：#b1,.p1,h1,span,div.red{}</li></ul></li></ul><h2 id="3-关系选择器"><a href="#3-关系选择器" class="headerlink" title="3.关系选择器"></a>3.关系选择器</h2><ul><li><p>子元素选择器</p><ul><li>作用：选中指定父元素的指定子元素</li><li>语法：父元素 &gt; 子元素</li><li>例子：div.box &gt; span</li></ul></li><li><p>后代元素选择器</p><ul><li>作用：选中指定元素内的指定后代元素</li><li>语法：祖先  后代</li><li>例子：div span</li></ul></li><li><p>兄弟元素选择器</p><ul><li><p>选择后一个兄弟元素：前一个 + 下一个</p><p>p + span</p></li><li><p>选择后边所有的兄弟元素：兄 ~ 弟</p><p>p ~ span</p></li></ul></li></ul><h2 id="4-属性选择器"><a href="#4-属性选择器" class="headerlink" title="4. 属性选择器"></a>4. 属性选择器</h2><ul><li><p>语法：      [属性名] 选择含有指定属性的元素</p><p>​      [属性名&#x3D;属性值] 选择含有指定属性和属性值的元素</p><p>​      [属性名^&#x3D;属性值] 选择属性值以指定值开头的元素</p><p>​      [属性名$&#x3D;属性值] 选择属性值以指定值结尾的元素</p><p>​      [属性名*&#x3D;属性值] 选择属性值中含有某值的元素的元素</p></li><li><p>对应示例：  p[title]</p><p>​     p[title&#x3D;abc]</p><p>​     p[title^&#x3D;abc]</p><p>​     p[title$&#x3D;abc]</p><p>​ p[title^&#x3D;abc]</p></li></ul><h2 id="5-伪类"><a href="#5-伪类" class="headerlink" title="5. 伪类"></a>5. 伪类</h2><ul><li><p>伪类用来描述一个元素的<span style="color:red;font-size:16px;">特殊状态</span>，比如：第一个子元素、被点击的元素、鼠标移入的元素。。。</p></li><li><p>一般情况伪类下都是使用 : 开头</p><ul><li>:first-child第一个子元素</li><li>:last-child     最后一个子元素</li><li>:nth-child()   选中第n个子元素(参数为2n或者even时表示选中偶数位的元素；参数为2n+1或者odd时表示选中奇数位的元素)</li></ul><div class="note info flat"><p>以上这些伪类都是根据所有的子元素进行排序</p></div><ul><li>:first-of-type、:last-of-type、:nth-of-type()</li></ul><div class="note info flat"><p>这几个伪类的功能和上述的类似，不同点是他们是在同类型元素中进行排序</p></div><ul><li>:not()    否定伪类，将符合条件的元素从选择器中去除</li><li>a元素的伪类<ul><li>:link 用来表示没访问过的链接（正常的链接）</li><li>:visited 用来表示访问过的链接</li><li>:hover 用来表示鼠标移入的状态</li><li>:active 用来表示鼠标点击的状态</li></ul></li></ul></li></ul><h2 id="6-伪元素选择器"><a href="#6-伪元素选择器" class="headerlink" title="6. 伪元素选择器"></a>6. 伪元素选择器</h2><ul><li><p>伪元素用来表示页面中一些特殊的并不真实存在的元素（即<span style="color:red;font-size:16px;">特殊的位置</span>）</p></li><li><p>伪元素一般使用 :: 开头</p><ul><li>::first-letter 表示第一个字母</li><li>::first-line 表示第一行</li><li>::selection 表示选中的内容</li><li>::before 元素的开始</li><li>::after 元素的最后</li></ul><div class="note info flat"><p>before 和 after 必须结合content属性来使用</p></div></li><li><p>更多伪类&#x2F;元素的用法请参考(<a href="https://www.w3cschool.cn/cssref/53s812dp.html">CSS 选择器</a>)</p></li></ul><h2 id="7-样式的继承"><a href="#7-样式的继承" class="headerlink" title="7. 样式的继承"></a>7. 样式的继承</h2><p>我们在为一个元素设置样式时同时也会应用到它的后代元素上。</p><ul><li>继承是发生在祖先和后代之间的</li><li>继承的设计是为了方便我们的开发，利用继承我们可以将一些通用的样式统一设置到共同的祖先元素上，这样只需设置一次即可让所有的元素都具有该样式。</li></ul><div class="note warning flat"><p>并不是所有的样式都会被继承，比如背景相关的，布局相关等的这些样式都不会被继承。具体哪些样式会被继承请查阅css手册内容</p></div><h2 id="8-选择器的权重"><a href="#8-选择器的权重" class="headerlink" title="8. 选择器的权重"></a>8. 选择器的权重</h2><p>当我们通过不同的选择器，选中相同的元素，并且为相同的样式设置不同的值时，此时就发生了样式的冲突。当发生样式冲突时，应用哪个样式则由选择器的权重（优先级）所决定。</p><p><strong>选择器的权重</strong></p><table><thead><tr><th align="left">选择器</th><th>优先级</th></tr></thead><tbody><tr><td align="left">内联样式（直接将css代码放在标签内）</td><td>1,0,0,0</td></tr><tr><td align="left">id选择器</td><td>0,1,0,0</td></tr><tr><td align="left">类和伪类选择器</td><td>0,0,1,0</td></tr><tr><td align="left">元素选择器</td><td>0,0,0,1</td></tr><tr><td align="left">通配选择器</td><td>0,0,0,0</td></tr><tr><td align="left">继承的样式</td><td>没有优先级</td></tr></tbody></table><ul><li>比较优先级时，需要将所有选择器的优先级进行相加计算，最后优先级越高，则越优先显示（分组选择器是单独计算的），选择器的累加不会超过其最大的数量级，类选择器再高也不会超过id选择器，如果优先级计算后相同，此时则优先使用靠下的样式。</li><li>可以在某一个样式的后边添加 !important ，则此时该样式会获取到最高的优先级，甚至超过内联样式，但是实际开发中不建议使用。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>html初级笔记</title>
       <link href="/posts/html%E5%88%9D%E7%BA%A7%E7%AC%94%E8%AE%B0/"/>
       <url>/posts/html%E5%88%9D%E7%BA%A7%E7%AC%94%E8%AE%B0/</url>
